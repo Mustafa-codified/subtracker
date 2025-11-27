@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Subscription } from "../types";
 
-const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const ai = new GoogleGenAI({ apiKey: Process.env.GEMINI_API_KEY });
 
 export const detectSubscriptions = async (text: string): Promise<Omit<Subscription, 'id' | 'status'>[]> => {
   const model = "gemini-2.5-flash";
